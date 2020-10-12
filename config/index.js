@@ -1,3 +1,5 @@
+import path from 'path';
+
 const config = {
   projectName: 'taro-demo',
   date: '2020-10-4',
@@ -9,21 +11,25 @@ const config = {
   },
   sourceRoot: 'src',
   outputRoot: 'dist',
-  plugins: [
-    '@tarojs/plugin-sass'
-  ],
+  plugins: ['@tarojs/plugin-sass'],
   // 全局变量设置
   defineConstants: {},
   copy: {
     patterns: [],
     options: {}
   },
+  sass: {
+    projectDirectory: path.resolve(__dirname, '..'),
+    resource: ['src/styles/variable.scss', 'src/styles/_mixins.scss']
+  },
   framework: 'react',
   // 小程序端专用配置
   mini: {
     // 自定义 webpack 配置 ->  打包体积分析
     webpackChain(chain) {
-      chain.plugin('analyzer').use(require('webpack-bundle-analyzer').BundleAnalyzerPlugin, [])
+      chain
+        .plugin('analyzer')
+        .use(require('webpack-bundle-analyzer').BundleAnalyzerPlugin, []);
     },
     prerender: {
       // TODO: `pages/nodes/nodes` 也会参与 prerender
@@ -69,7 +75,7 @@ const config = {
   }
 };
 
-module.exports = function (merge) {
+module.exports = function(merge) {
   if (process.env.NODE_ENV === 'development') {
     return merge({}, config, require('./dev'));
   }
