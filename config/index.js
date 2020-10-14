@@ -22,6 +22,9 @@ const config = {
     projectDirectory: path.resolve(__dirname, '..'),
     resource: ['src/styles/variable.scss', 'src/styles/_mixins.scss']
   },
+  alias: {
+    '@': path.resolve(__dirname, '..', 'src')
+  },
   framework: 'react',
   // 小程序端专用配置
   mini: {
@@ -59,6 +62,7 @@ const config = {
   h5: {
     publicPath: '/',
     staticDirectory: 'static',
+    esnextModules: ['taro-ui'],
     postcss: {
       autoprefixer: {
         enable: true,
