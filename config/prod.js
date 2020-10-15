@@ -3,6 +3,8 @@ const config = {
     NODE_ENV: '"production"'
   },
   defineConstants: {
+    BASE_URL: JSON.stringify('prod'),
+    BASE_PREFIX: JSON.stringify('/api')
   },
   mini: {},
   h5: {

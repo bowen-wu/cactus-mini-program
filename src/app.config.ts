@@ -2,7 +2,7 @@
  * 可以配置一些路由、tabBar、分包（subpackages） 相关参数
  */
 export default {
-  pages: ['pages/index/index', 'pages/test/index'],
+  pages: ['pages/index/index', 'pages/test/index', 'pages/order/index'],
   // 分包
   // subpackages: [
   //   {

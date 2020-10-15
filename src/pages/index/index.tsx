@@ -8,15 +8,18 @@ import './index.scss';
 const Index = () => {
   const unstated = Unstated.useContainer();
 
-  const onGoToTestPage = useCallback(() => {
-    void Taro.navigateTo({ url: '/pages/test/index' });
+  const onGoToTestPage = useCallback(url => {
+    void Taro.navigateTo({ url });
   }, []);
 
   return (
     <View className='index'>
       <Text className='index'>Hello world! </Text>
-      <View onClick={onGoToTestPage}>
+      <View onClick={onGoToTestPage.bind(null, '/pages/test/index')}>
         Go To Test Page {unstated.toString()}
+      </View>
+      <View onClick={onGoToTestPage.bind(null, '/pages/order/index')}>
+        Go To Order Page
       </View>
     </View>
   );

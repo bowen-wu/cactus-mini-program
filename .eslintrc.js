@@ -1,6 +1,9 @@
 module.exports = {
   extends: ['taro/react'],
-  globals: {},
+  globals: {
+    BASE_URL: true,
+    BASE_PREFIX: true
+  },
   rules: {
     'no-void': 0,
     'react/jsx-curly-newline': 0,
