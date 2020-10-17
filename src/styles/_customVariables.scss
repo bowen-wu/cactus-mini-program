@@ -1,0 +1,52 @@
+/* 字重： 细[light] base[regular + medium] 粗[bold]*/
+
+$hd: 2; // 基本单位
+
+$color-brand: #77c35c;
+$color-brand-light: #8FC056;
+$color-brand-dark: #5D8F4E;
+
+/* Color */
+$color-success: $color-brand;
+$color-error: #FF5454;
+$color-warning: #FFC044;
+$color-info: #333;
+
+/* Text Color */
+$color-text-base: #333;
+$color-text-base-inverse: #FFF;
+$color-text-secondary: #999;
+$color-text-placeholder: #aaa;
+
+/* Font */
+$font-size-xs: 11px * $hd;
+$font-size-sm: 12px * $hd;
+$font-size-base: 13px * $hd;
+$font-size-lg: 14px * $hd;
+$font-size-xl: 15px * $hd;
+$font-size-xxl: 16px * $hd;
+
+/* 水平间距 */
+$spacing-h-sm: 4px * $hd;
+$spacing-h-md: 6px * $hd;
+$spacing-h-lg: 8px * $hd;
+$spacing-h-xl: 12px * $hd;
+
+/* 垂直间距 */
+$spacing-v-xs: 4px * $hd;
+$spacing-v-sm: 6px * $hd;
+$spacing-v-md: 8px * $hd;
+$spacing-v-lg: 12px * $hd;
+$spacing-v-xl: 16px * $hd;
+
+/* Border Radius */
+$border-radius-sm: 2px * $hd;
+$border-radius-md: 4px * $hd;
+$border-radius-lg: 6px * $hd;
+$border-radius-circle: 50%;
+
+/* 边框颜色 */
+$color-border-base: $color-brand;
+
+/* 引入 Taro UI 默认样式 */
+@import "~taro-ui/dist/style/index.scss";

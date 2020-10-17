@@ -21,6 +21,7 @@ const config = {
   sass: {
     projectDirectory: path.resolve(__dirname, '..'),
     resource: [
+      'src/styles/_customVariables.scss',
       'src/styles/_variable.scss',
       'src/styles/_mixins.scss',
       'src/styles/_zIndex.scss',

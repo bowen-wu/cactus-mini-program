@@ -1,4 +1,5 @@
-import 'taro-ui/dist/style/index.scss';
+// import 'taro-ui/dist/style/index.scss';
+// import './styles/customVariables.scss';
 import React, { ReactNode } from 'react';
 import Unstated from './unstated';
 import './app.scss';
