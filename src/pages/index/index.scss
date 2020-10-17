@@ -1,3 +1,4 @@
 .index {
   color: red;
+  z-index: get-z-index($elements, auto);
 }

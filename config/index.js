@@ -20,7 +20,12 @@ const config = {
   },
   sass: {
     projectDirectory: path.resolve(__dirname, '..'),
-    resource: ['src/styles/variable.scss', 'src/styles/_mixins.scss']
+    resource: [
+      'src/styles/_variable.scss',
+      'src/styles/_mixins.scss',
+      'src/styles/_zIndex.scss',
+      'src/styles/_function.scss'
+    ]
   },
   alias: {
     '@': path.resolve(__dirname, '..', 'src')
