@@ -18,6 +18,7 @@ module.exports = {
       'error',
       { allowBind: true, allowArrowFunctions: true }
     ],
-    'no-console': ['error', { allow: ['warn', 'error'] }]
+    'no-console': ['error', { allow: ['warn', 'error'] }],
+    'no-useless-escape': 0
   }
 };
