@@ -1,0 +1,8 @@
+.custom-button {
+  margin: 0 32px;
+  border-radius: 4px;
+  padding: 10px 0;
+  background-color: $primary-color;
+  text-align: center;
+  @include fontLineColor(32px, 45px, #fff);
+}
