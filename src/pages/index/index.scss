@@ -2,6 +2,10 @@
   color: red;
   z-index: get-z-index($elements, auto);
 
+  .text {
+    margin: 10px;
+  }
+
   .custom-button {
     margin-top: 10px;
     margin-bottom: 10px;
