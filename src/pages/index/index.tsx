@@ -5,6 +5,7 @@ import { View } from '@tarojs/components';
 import { AtButton } from 'taro-ui';
 import CustomButton from '@/components/custom/Button';
 import CustomTabs, { CustomTabItem, TabsMode } from '@/components/custom/Tabs';
+import CustomTags, { TagItem } from '@/components/custom/Tags';
 
 import './index.scss';
 
@@ -73,11 +74,109 @@ const initStatusTabList: CustomTabItem[] = [
   }
 ];
 
+const initTagList = [
+  {
+    label: '拍摄',
+    key: 'shoot',
+    active: false
+  },
+  {
+    label: '文案',
+    key: 'copyWriting',
+    active: false
+  },
+  {
+    label: '投放',
+    key: 'put',
+    active: true
+  },
+  {
+    label: '设计',
+    key: 'design',
+    active: false
+  },
+  {
+    label: '社群',
+    key: 'community',
+    active: false
+  },
+  {
+    label: '培训',
+    key: 'training',
+    active: false
+  },
+  {
+    label: '分销',
+    key: 'distribution',
+    active: false
+  },
+  {
+    label: '调研',
+    key: 'research',
+    active: false
+  },
+  {
+    label: '关注',
+    key: 'attention',
+    active: false
+  },
+  {
+    label: '猎头',
+    key: 'headhunting',
+    active: false
+  },
+  {
+    label: '直播',
+    key: 'live',
+    active: false
+  },
+  {
+    label: 'KOL/KOC孵化',
+    key: 'KOL/KOCIncubation',
+    active: false
+  }
+];
+
+const initSecondTagList = [
+  {
+    label: '体验官',
+    key: 'first'
+  },
+  {
+    label: '亲子vlog',
+    key: 'second'
+  },
+  {
+    label: '直播',
+    key: 'third'
+  },
+  {
+    label: '北美外教',
+    key: 'fourth'
+  },
+  {
+    label: '亲子游',
+    key: 'fifth'
+  },
+  {
+    label: '文案写作',
+    key: 'sixth'
+  },
+  {
+    label: '短视频脚本设计',
+    key: 'seventh'
+  }
+];
+
 const Index = () => {
   const unstated = Unstated.useContainer();
   const [tabList, setTabList] = useState<CustomTabItem[]>(initTabList);
   const [statusTabList, setStatusTabList] = useState<CustomTabItem[]>(
     initStatusTabList
+  );
+  const [tagList, setTagList] = useState<TagItem[]>(initTagList);
+  const [secondTagList, setSecondTagList] = useState<TagItem[]>(
+    initSecondTagList
   );
 
   const onGoToTestPage = useCallback(url => {
@@ -100,6 +199,25 @@ const Index = () => {
     (_, isolateStatusTabList) => setStatusTabList(isolateStatusTabList),
     []
   );
+
+  const onSelectedTagChange = useCallback(
+    (type, selectedTagKeyList, selectedTagList, isolateTagList) => {
+      switch (type) {
+        case 'init':
+          setTagList(isolateTagList);
+          break;
+        case 'second':
+          setSecondTagList(isolateTagList);
+          break;
+        default:
+          break;
+      }
+      selectedTagKeyList.map();
+      selectedTagList.map();
+    },
+    []
+  );
+
   return (
     <View className='index'>
       <CustomButton onClick={onCustomButtonClick}>啦啦啦</CustomButton>
@@ -112,6 +230,19 @@ const Index = () => {
         mode={TabsMode.TAG}
         onSelectedTabChange={onSelectedStatusTabChange}
         tabList={statusTabList}
+      />
+
+      <View className='text'>Hello world! </View>
+
+      <CustomTags
+        tagList={tagList}
+        onSelectedChange={onSelectedTagChange.bind(null, 'init')}
+      />
+      <View className='text'>Hello world! </View>
+
+      <CustomTags
+        tagList={secondTagList}
+        onSelectedChange={onSelectedTagChange.bind(null, 'second')}
       />
 
       <View className='text'>Hello world! </View>
