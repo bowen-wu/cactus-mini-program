@@ -1,0 +1,24 @@
+.custom-tags {
+  @include flex();
+  flex-wrap: wrap;
+
+  &-item {
+    @include fontLineColor(26px, 28px, #333);
+    padding: 11px 32px;
+    border-radius: 2px;
+    background-color: #F5F5F5;
+    margin-right: 24px;
+    flex-shrink: 0;
+    margin-bottom: 16px;
+    transition: all linear 0.2s;
+
+    &.custom-tags-active {
+      background-color: #619451;
+      color: #fff;
+    }
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+}
